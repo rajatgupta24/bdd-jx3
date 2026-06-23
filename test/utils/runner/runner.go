@@ -99,7 +99,7 @@ func (r *JxRunner) RunWithOutput(args ...string) (string, error) {
 	if rErr != nil {
 		return "", fmt.Errorf("running jx %s output %s: %w", strings.Join(args, " "), answer, err)
 	}
-	return strings.TrimSpace(RemoveCoverageText(answer, args...)), nil
+	return RemoveCoverageText(answer, args...), nil
 }
 
 // Run runs a jx command
@@ -120,7 +120,7 @@ func (r *JxRunner) RunWithOutputNoTimeout(args ...string) (string, error) {
 		utils.LogInfof("running jx %s and got result: %s\n", argsStr, answer)
 	}
 
-	answer = strings.TrimSpace(RemoveCoverageText(answer, args...))
+	answer = RemoveCoverageText(answer, args...)
 	if err != nil {
 		return answer, err
 	}

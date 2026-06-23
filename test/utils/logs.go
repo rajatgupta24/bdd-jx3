@@ -19,7 +19,7 @@ func LogInfo(message string) {
 
 // LogInfof info logging
 func LogInfof(format string, args ...interface{}) {
-	fmt.Fprintf(ginkgo.GinkgoWriter, infoPrefix+fmt.Sprintf(format, args...))
+	fmt.Fprintf(ginkgo.GinkgoWriter, "%s", infoPrefix+fmt.Sprintf(format, args...))
 }
 
 // Color avoids the color string if we should disable colors
