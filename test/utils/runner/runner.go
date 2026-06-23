@@ -148,6 +148,5 @@ func RemoveCoverageText(s string, args ...string) string {
 	if len(coverageOutput) == 3 {
 		utils.LogInfof("when running %s %s coverage was %s\n", Jx, strings.Join(args, " "), coverageOutput[2])
 	}
-	answer := coverageOutputRegex.ReplaceAllString(s, "")
-	return strings.TrimSpace(answer)
+	return coverageOutputRegex.ReplaceAllString(s, "")
 }
